@@ -1,6 +1,27 @@
-# what is an operating system and explain its functions?
+
+
+## Table of Contents
+
+- [Q: What is an Operating System? Explain its major functions.](#q-what-is-an-operating-system-explain-its-major-functions)
+- [ANSWER](#answer)
+- [PART 1: What is an Operating System? (Definition)](#part-1-what-is-an-operating-system-definition)
+  - [Simple Definition](#simple-definition)
+  - [Simple Analogy](#simple-analogy)
+- [PART 2: Major Functions of Operating System](#part-2-major-functions-of-operating-system)
+  - [Function 1: Process Management](#function-1-process-management)
+  - [Function 2: Memory Management](#function-2-memory-management)
+  - [Function 3: File Management](#function-3-file-management)
+  - [Function 4: Device Management (I/O Management)](#function-4-device-management-io-management)
+  - [Function 5: Process Scheduling (Sub-part of Process Management)](#function-5-process-scheduling-sub-part-of-process-management)
+  - [Function 6: Security and Protection](#function-6-security-and-protection)
+  - [Function 7: Error Detection and Handling](#function-7-error-detection-and-handling)
+
 ---
 
+
+# what is an operating system and explain its functions?
+
+---
 ## Q: What is an Operating System? Explain its major functions.
 
 ---
@@ -18,6 +39,7 @@
 ### Simple Analogy:
 
 > Think of a **restaurant**:
+>
 > - **Customer** = User
 > - **Food** = Output/Result
 > - **Kitchen & Equipment** = Hardware (CPU, RAM, Disk)
@@ -79,6 +101,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **What it does:** Manages all programs (processes) running on the computer.
 
 **Tasks:**
+
 - Creating and deleting processes
 - Scheduling which process gets CPU time
 - Suspending and resuming processes
@@ -87,6 +110,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **Simple words:** The OS decides **which program runs when** and for how long.
 
 **Diagram:**
+
 ```
     ┌─────────┐    ┌─────────┐    ┌─────────┐
     │Process A│    │Process B│    │Process C│
@@ -113,6 +137,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **What it does:** Manages the computer's main memory (RAM).
 
 **Tasks:**
+
 - Keeping track of which memory is used and by whom
 - Allocating memory to processes when needed
 - Deallocating memory when processes finish
@@ -121,6 +146,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **Simple words:** The OS decides **which program gets how much RAM**.
 
 **Diagram:**
+
 ```
     RAM (Main Memory)
     ┌─────────────────────────────────────────────┐
@@ -147,6 +173,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **What it does:** Manages files and folders on storage devices (hard disk, SSD).
 
 **Tasks:**
+
 - Creating and deleting files and directories
 - Organizing files in folders (hierarchical structure)
 - Allocating space for files on disk
@@ -156,6 +183,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **Simple words:** The OS organizes **where and how files are stored**.
 
 **Diagram:**
+
 ```
     ┌─────────────────────────────────────────────┐
     │            FILE SYSTEM (OS manages)         │
@@ -190,6 +218,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **What it does:** Manages all input/output devices (keyboard, mouse, printer, monitor, disk).
 
 **Tasks:**
+
 - Controlling all I/O devices
 - Using device drivers to communicate with hardware
 - Handling interrupts from devices
@@ -198,6 +227,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **Simple words:** The OS talks to **all hardware devices** on your behalf.
 
 **Diagram:**
+
 ```
                     ┌─────────────────┐
                     │   OPERATING     │
@@ -229,6 +259,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **Simple words:** Like a traffic cop directing cars (processes) through an intersection (CPU).
 
 **Diagram:**
+
 ```
     Ready Queue (Processes waiting for CPU)
     ┌─────────────────────────────────────────┐
@@ -255,6 +286,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **What it does:** Protects the computer from unauthorized access.
 
 **Tasks:**
+
 - User authentication (username/password)
 - Setting file permissions (read, write, execute)
 - Separating processes so they don't interfere
@@ -263,6 +295,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **Simple words:** The OS **keeps your computer safe**.
 
 **Diagram:**
+
 ```
                     ┌─────────────────────────┐
                     │     USER LOGIN          │
@@ -296,6 +329,7 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 **What it does:** Detects and handles errors to keep the system running.
 
 **Types of errors:**
+
 - Hardware errors (printer not responding)
 - Software errors (program crashes)
 - Memory errors (out of memory)
@@ -341,15 +375,15 @@ The OS performs **many functions** to manage the computer. Here are the **most i
 
 > **"Please Make Files Do Safe Easy User-work"**
 
-| Letter | Function |
-| :--- | :--- |
-| **P** | Process Management |
-| **M** | Memory Management |
-| **F** | File Management |
-| **D** | Device Management |
-| **S** | Security & Protection |
-| **E** | Error Handling |
-| **U** | User Interface |
+| Letter | Function              |
+| :----- | :-------------------- |
+| **P**  | Process Management    |
+| **M**  | Memory Management     |
+| **F**  | File Management       |
+| **D**  | Device Management     |
+| **S**  | Security & Protection |
+| **E**  | Error Handling        |
+| **U**  | User Interface        |
 
 ### Step 2: The "Traffic Cop" Analogy
 
@@ -367,23 +401,23 @@ A city (Computer) needs a Traffic Cop (OS):
 
 ### Step 3: One-line definitions (Write in exam)
 
-| Function | One-line definition |
-| :--- | :--- |
-| **Process Management** | Manages running programs and CPU scheduling |
-| **Memory Management** | Manages allocation and deallocation of RAM |
-| **File Management** | Organizes files and folders on disk |
-| **Device Management** | Controls all I/O devices through drivers |
-| **Security** | Protects system from unauthorized access |
-| **Error Handling** | Detects and recovers from errors |
-| **User Interface** | Provides way for user to interact with computer |
+| Function               | One-line definition                             |
+| :--------------------- | :---------------------------------------------- |
+| **Process Management** | Manages running programs and CPU scheduling     |
+| **Memory Management**  | Manages allocation and deallocation of RAM      |
+| **File Management**    | Organizes files and folders on disk             |
+| **Device Management**  | Controls all I/O devices through drivers        |
+| **Security**           | Protects system from unauthorized access        |
+| **Error Handling**     | Detects and recovers from errors                |
+| **User Interface**     | Provides way for user to interact with computer |
 
 ---
 
 ## Sample Exam Answer Opening (Write this first)
 
-> *"An Operating System (OS) is system software that acts as an interface between the user and the computer hardware. It manages all hardware resources and provides an environment for application programs to run. Examples include Windows, Linux, and macOS."*
+> _"An Operating System (OS) is system software that acts as an interface between the user and the computer hardware. It manages all hardware resources and provides an environment for application programs to run. Examples include Windows, Linux, and macOS."_
 
-> *"The major functions of an operating system are: Process Management (managing running programs and CPU scheduling), Memory Management (allocating RAM to processes), File Management (organizing files and directories on disk), Device Management (controlling I/O devices through drivers), Security and Protection (user authentication and permissions), Error Handling (detecting and recovering from errors), and User Interface (providing CLI or GUI for user interaction)."*
+> _"The major functions of an operating system are: Process Management (managing running programs and CPU scheduling), Memory Management (allocating RAM to processes), File Management (organizing files and directories on disk), Device Management (controlling I/O devices through drivers), Security and Protection (user authentication and permissions), Error Handling (detecting and recovering from errors), and User Interface (providing CLI or GUI for user interaction)."_
 
 ---
 
@@ -404,7 +438,6 @@ U - User Interface      → How user talks to computer
 ```
 
 ---
-
 
 # Operating system services
 
@@ -546,16 +579,16 @@ Here is a **short, exam-ready answer** on **Operating System Services** – foll
 
 ## Summary Table (One line each – No drawing)
 
-| Service | What it does (One line) |
-| :--- | :--- |
-| Program Execution | Loads and runs programs |
-| I/O Operations | Handles all input and output |
-| File Manipulation | Creates, reads, writes, deletes files |
-| Communication | Allows programs to exchange data |
-| Error Detection | Finds and handles errors |
-| Resource Allocation | Distributes CPU, memory, devices |
-| Protection & Security | Prevents unauthorized access |
-| User Interface | Provides CLI or GUI for users |
+| Service               | What it does (One line)               |
+| :-------------------- | :------------------------------------ |
+| Program Execution     | Loads and runs programs               |
+| I/O Operations        | Handles all input and output          |
+| File Manipulation     | Creates, reads, writes, deletes files |
+| Communication         | Allows programs to exchange data      |
+| Error Detection       | Finds and handles errors              |
+| Resource Allocation   | Distributes CPU, memory, devices      |
+| Protection & Security | Prevents unauthorized access          |
+| User Interface        | Provides CLI or GUI for users         |
 
 ---
 
@@ -588,16 +621,16 @@ Here is a **short, exam-ready answer** on **Operating System Services** – foll
 
 > **"Please I Feel Comfortable Eating Rice Plain Under trees"**
 
-| Letter | Service |
-| :--- | :--- |
-| **P** | Program Execution |
-| **I** | I/O Operations |
-| **F** | File Manipulation |
-| **C** | Communication |
-| **E** | Error Detection |
-| **R** | Resource Allocation |
-| **P** | Protection & Security |
-| **U** | User Interface |
+| Letter | Service               |
+| :----- | :-------------------- |
+| **P**  | Program Execution     |
+| **I**  | I/O Operations        |
+| **F**  | File Manipulation     |
+| **C**  | Communication         |
+| **E**  | Error Detection       |
+| **R**  | Resource Allocation   |
+| **P**  | Protection & Security |
+| **U**  | User Interface        |
 
 ---
 
@@ -622,18 +655,18 @@ Hold up 8 fingers and say:
 
 ## Sample Exam Answer (Short – For 5 marks)
 
-> *"Operating System Services are the functions provided by the OS to help users and programs run efficiently. The main services are:"*
+> _"Operating System Services are the functions provided by the OS to help users and programs run efficiently. The main services are:"_
 >
-> *1. **Program Execution** – Loading and running programs*
-> *2. **I/O Operations** – Handling all input and output*
-> *3. **File Manipulation** – Creating, reading, writing, deleting files*
-> *4. **Communication** – Allowing processes to exchange data*
-> *5. **Error Detection** – Finding and handling errors*
-> *6. **Resource Allocation** – Distributing CPU, memory, and devices*
-> *7. **Protection & Security** – Preventing unauthorized access*
-> *8. **User Interface** – Providing CLI or GUI for interaction*
+> _1. **Program Execution** – Loading and running programs_
+> _2. **I/O Operations** – Handling all input and output_
+> _3. **File Manipulation** – Creating, reading, writing, deleting files_
+> _4. **Communication** – Allowing processes to exchange data_
+> _5. **Error Detection** – Finding and handling errors_
+> _6. **Resource Allocation** – Distributing CPU, memory, and devices_
+> _7. **Protection & Security** – Preventing unauthorized access_
+> _8. **User Interface** – Providing CLI or GUI for interaction_
 >
-> *These services act as a bridge between the user/programs and the hardware.*
+> _These services act as a bridge between the user/programs and the hardware._
 
 ---
 
@@ -677,6 +710,7 @@ Here is a **clear, diagram-based, exam-ready answer** on the **Difference betwee
 **Example:** Linux, UNIX, mainframe operating systems.
 
 **Diagram:**
+
 ```
                     ┌─────────────────────────────────────┐
                     │           MULTIUSER OS              │
@@ -706,6 +740,7 @@ Here is a **clear, diagram-based, exam-ready answer** on the **Difference betwee
 **Example:** Windows Server, Linux on multi-core systems, macOS on multi-core.
 
 **Diagram:**
+
 ```
                     ┌─────────────────────────────────────┐
                     │         MULTIPROCESSING OS          │
@@ -731,63 +766,63 @@ Here is a **clear, diagram-based, exam-ready answer** on the **Difference betwee
 
 ### 1. Basic Definition
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
-| **Focus** | Multiple **users** | Multiple **CPUs/processors** |
-| **What is shared?** | Same computer system | Same memory and resources |
+| Aspect              | Multiuser OS         | Multiprocessing OS           |
+| :------------------ | :------------------- | :--------------------------- |
+| **Focus**           | Multiple **users**   | Multiple **CPUs/processors** |
+| **What is shared?** | Same computer system | Same memory and resources    |
 
 ---
 
 ### 2. Number of Users vs Processors
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
-| **Multiple WHAT?** | Multiple **users** | Multiple **processors** |
-| **Count** | Many people can log in | Many CPUs work together |
+| Aspect             | Multiuser OS           | Multiprocessing OS      |
+| :----------------- | :--------------------- | :---------------------- |
+| **Multiple WHAT?** | Multiple **users**     | Multiple **processors** |
+| **Count**          | Many people can log in | Many CPUs work together |
 
 ---
 
 ### 3. Purpose
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
+| Aspect          | Multiuser OS                              | Multiprocessing OS               |
+| :-------------- | :---------------------------------------- | :------------------------------- |
 | **Why use it?** | To allow many users to share one computer | To increase speed and throughput |
-| **Goal** | Sharing resources (disk, printer) | Parallel execution of tasks |
+| **Goal**        | Sharing resources (disk, printer)         | Parallel execution of tasks      |
 
 ---
 
 ### 4. Hardware Requirement
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
-| **Hardware needed** | One CPU is enough | Two or more CPUs required |
-| **Can work with single CPU?** | Yes | No (needs multiple CPUs) |
+| Aspect                        | Multiuser OS      | Multiprocessing OS        |
+| :---------------------------- | :---------------- | :------------------------ |
+| **Hardware needed**           | One CPU is enough | Two or more CPUs required |
+| **Can work with single CPU?** | Yes               | No (needs multiple CPUs)  |
 
 ---
 
 ### 5. Examples
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
+| Aspect       | Multiuser OS              | Multiprocessing OS                          |
+| :----------- | :------------------------ | :------------------------------------------ |
 | **Examples** | Linux, UNIX, Mainframe OS | Windows Server, Linux (multi-core), Solaris |
 
 ---
 
 ### 6. Performance
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
-| **Performance depends on** | Number of active users | Number of CPUs available |
-| **Speed** | May slow down with many users | Faster because tasks are parallel |
+| Aspect                     | Multiuser OS                  | Multiprocessing OS                |
+| :------------------------- | :---------------------------- | :-------------------------------- |
+| **Performance depends on** | Number of active users        | Number of CPUs available          |
+| **Speed**                  | May slow down with many users | Faster because tasks are parallel |
 
 ---
 
 ### 7. Complexity
 
-| Aspect | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
-| **Implementation** | Moderately complex | Very complex (need to manage multiple CPUs) |
-| **Main challenge** | User isolation and security | Synchronization and load balancing |
+| Aspect             | Multiuser OS                | Multiprocessing OS                          |
+| :----------------- | :-------------------------- | :------------------------------------------ |
+| **Implementation** | Moderately complex          | Very complex (need to manage multiple CPUs) |
+| **Main challenge** | User isolation and security | Synchronization and load balancing          |
 
 ---
 
@@ -859,45 +894,45 @@ Here is a **clear, diagram-based, exam-ready answer** on the **Difference betwee
 
 > **"Multiprocessing = Multiple PROCESSORS (CPUs)"**
 
-| Focus | Word to Remember |
-| :--- | :--- |
-| **Multiuser** | **U** = **U**sers |
+| Focus               | Word to Remember              |
+| :------------------ | :---------------------------- |
+| **Multiuser**       | **U** = **U**sers             |
 | **Multiprocessing** | **P** = **P**rocessors (CPUs) |
 
 ---
 
 ### One-line difference (Write this in exam)
 
-> *"Multiuser OS allows multiple users to share a single computer system, while Multiprocessing OS uses multiple CPUs to execute multiple tasks simultaneously."*
+> _"Multiuser OS allows multiple users to share a single computer system, while Multiprocessing OS uses multiple CPUs to execute multiple tasks simultaneously."_
 
 ---
 
 ## Quick Revision Table (No drawing – Just memorize)
 
-| Feature | Multiuser OS | Multiprocessing OS |
-| :--- | :--- | :--- |
-| **Deals with** | Multiple users | Multiple CPUs |
-| **Number of CPUs** | Usually one | Two or more |
-| **Purpose** | Resource sharing | Speed and throughput |
-| **Example** | Linux, UNIX | Windows Server, Linux (multi-core) |
-| **Can work on single CPU?** | Yes | No |
-| **Main challenge** | User isolation | Synchronization |
+| Feature                     | Multiuser OS     | Multiprocessing OS                 |
+| :-------------------------- | :--------------- | :--------------------------------- |
+| **Deals with**              | Multiple users   | Multiple CPUs                      |
+| **Number of CPUs**          | Usually one      | Two or more                        |
+| **Purpose**                 | Resource sharing | Speed and throughput               |
+| **Example**                 | Linux, UNIX      | Windows Server, Linux (multi-core) |
+| **Can work on single CPU?** | Yes              | No                                 |
+| **Main challenge**          | User isolation   | Synchronization                    |
 
 ---
 
 ## Sample Exam Answer (Short – For 5 marks)
 
-> *"The difference between Multiuser and Multiprocessing OS is:"*
+> _"The difference between Multiuser and Multiprocessing OS is:"_
 >
-> *1. **Multiuser OS** allows multiple users to use the same computer simultaneously (e.g., Linux, UNIX). **Multiprocessing OS** uses multiple CPUs to execute tasks in parallel (e.g., Windows Server on multi-core).*
+> _1. **Multiuser OS** allows multiple users to use the same computer simultaneously (e.g., Linux, UNIX). **Multiprocessing OS** uses multiple CPUs to execute tasks in parallel (e.g., Windows Server on multi-core)._
 >
-> *2. **Multiuser OS** focuses on sharing resources like disk, printer, and memory among users. **Multiprocessing OS** focuses on increasing throughput and speed by parallel execution.*
+> _2. **Multiuser OS** focuses on sharing resources like disk, printer, and memory among users. **Multiprocessing OS** focuses on increasing throughput and speed by parallel execution._
 >
-> *3. **Multiuser OS** can work with a single CPU. **Multiprocessing OS** requires two or more CPUs.*
+> _3. **Multiuser OS** can work with a single CPU. **Multiprocessing OS** requires two or more CPUs._
 >
-> *4. **Multiuser OS** example: A university server where many students log in. **Multiprocessing OS** example: A database server with 8 processors handling many queries simultaneously.*
+> _4. **Multiuser OS** example: A university server where many students log in. **Multiprocessing OS** example: A database server with 8 processors handling many queries simultaneously._
 >
-> *5. **Both can exist together** – Linux can be both multiuser and multiprocessing (many users on a multi-CPU system).*
+> _5. **Both can exist together** – Linux can be both multiuser and multiprocessing (many users on a multi-CPU system)._
 
 ---
 
@@ -922,6 +957,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 **What it is:** All OS components are combined into **one single large block** of code. No layers, no divisions.
 
 **Diagram:**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    SIMPLE (MONOLITHIC) STRUCTURE            │
@@ -945,6 +981,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 ```
 
 **Features:**
+
 - All parts in one single program
 - No boundaries between components
 - Very fast but hard to maintain
@@ -959,6 +996,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 **What it is:** OS is divided into **multiple layers**. Each layer only talks to the layer **below** and **above** it. The innermost layer (Layer 0) is hardware, the outermost is user interface.
 
 **Diagram:**
+
 ```
                     ┌─────────────────────────────────────────────┐
                     │                USER                         │
@@ -978,11 +1016,12 @@ The structure of an OS refers to **how its internal parts are organized and conn
                     ├─────────────────────────────────────────────┤
                     │  Layer 0   │   HARDWARE                     │
                     └─────────────────────────────────────────────┘
-                    
+
                     Example: THE (Technische Hogeschool Eindhoven) OS
 ```
 
 **Features:**
+
 - Each layer only uses services of lower layers
 - Modular and easier to debug
 - But layers may have performance overhead
@@ -997,6 +1036,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 **What it is:** Only the **most essential functions** (minimal core) run in kernel mode. Everything else (device drivers, file system, GUI) runs as **user programs**.
 
 **Diagram:**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    MICROKERNEL STRUCTURE                     │
@@ -1036,6 +1076,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 ```
 
 **Features:**
+
 - Very small kernel (only essential services)
 - Other services run as user processes
 - More secure and reliable
@@ -1050,6 +1091,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 **What it is:** OS is built from **independent modules**. Each module performs a specific function and can be **loaded/unloaded** dynamically. This is the most common structure today.
 
 **Diagram:**
+
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                    MODULAR STRUCTURE                        │
@@ -1079,6 +1121,7 @@ The structure of an OS refers to **how its internal parts are organized and conn
 ```
 
 **Features:**
+
 - OS divided into independent modules
 - Modules can be loaded/unloaded at runtime
 - Combines best of layered and microkernel
@@ -1127,8 +1170,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 1: Process Management
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                 | Key tasks                                   |
+| :--------------------------- | :------------------------------------------ |
 | Manages all running programs | Creating, scheduling, terminating processes |
 
 **Simple words:** Decides which program runs when and for how long.
@@ -1137,8 +1180,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 2: Memory Management
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does              | Key tasks                                           |
+| :------------------------ | :-------------------------------------------------- |
 | Manages RAM (main memory) | Allocating memory to programs, freeing it when done |
 
 **Simple words:** Decides which program gets how much RAM.
@@ -1147,8 +1190,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 3: File Management
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                      | Key tasks                                  |
+| :-------------------------------- | :----------------------------------------- |
 | Manages files and folders on disk | Creating, deleting, reading, writing files |
 
 **Simple words:** Organizes all your files and folders.
@@ -1157,8 +1200,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 4: Device Management (I/O Management)
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                 | Key tasks                                        |
+| :--------------------------- | :----------------------------------------------- |
 | Manages all hardware devices | Controlling keyboard, mouse, printer, disk, etc. |
 
 **Simple words:** Talks to all hardware so you don't have to.
@@ -1167,8 +1210,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 5: Security and Protection
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                                 | Key tasks                                       |
+| :------------------------------------------- | :---------------------------------------------- |
 | Protects the system from unauthorized access | User login, file permissions, memory protection |
 
 **Simple words:** Keeps your computer safe.
@@ -1177,8 +1220,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 6: User Interface
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                          | Key tasks                                  |
+| :------------------------------------ | :----------------------------------------- |
 | Allows user to interact with computer | CLI (command line) or GUI (windows, icons) |
 
 **Simple words:** The screen you see and click on.
@@ -1187,8 +1230,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 7: Network Management
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                  | Key tasks                                    |
+| :---------------------------- | :------------------------------------------- |
 | Manages network communication | TCP/IP, sending/receiving data over internet |
 
 **Simple words:** Helps your computer connect to the internet.
@@ -1197,8 +1240,8 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 ### Component 8: Command Interpreter (Shell)
 
-| What it does | Key tasks |
-| :--- | :--- |
+| What it does                     | Key tasks                           |
+| :------------------------------- | :---------------------------------- |
 | Reads and executes user commands | Takes typed commands, runs programs |
 
 **Simple words:** The thing that understands what you type in the terminal.
@@ -1262,16 +1305,16 @@ The components are the **actual parts** that make up the OS. These are the "buil
 
 > **"Please Make Files For David, Send Uncle New Cookies"**
 
-| Letter | Component |
-| :--- | :--- |
-| **P** | Process Management |
-| **M** | Memory Management |
-| **F** | File Management |
-| **D** | Device Management |
-| **S** | Security & Protection |
-| **U** | User Interface |
-| **N** | Network Management |
-| **C** | Command Interpreter (Shell) |
+| Letter | Component                   |
+| :----- | :-------------------------- |
+| **P**  | Process Management          |
+| **M**  | Memory Management           |
+| **F**  | File Management             |
+| **D**  | Device Management           |
+| **S**  | Security & Protection       |
+| **U**  | User Interface              |
+| **N**  | Network Management          |
+| **C**  | Command Interpreter (Shell) |
 
 ---
 
@@ -1301,9 +1344,9 @@ Modern OS (Windows, Linux, macOS) use MODULAR structure
 
 ## Sample Exam Answer (Short – For 5-10 marks)
 
-> *"Operating System structure refers to how its internal components are organized. The main structures are: Simple (Monolithic – all in one block), Layered (multiple layers each using lower layer), Microkernel (only essential services in kernel), and Modular (independent loadable modules). Modern OS like Windows and Linux use modular structure."*
+> _"Operating System structure refers to how its internal components are organized. The main structures are: Simple (Monolithic – all in one block), Layered (multiple layers each using lower layer), Microkernel (only essential services in kernel), and Modular (independent loadable modules). Modern OS like Windows and Linux use modular structure."_
 >
-> *"OS components are the actual building blocks: Process Management (manages running programs), Memory Management (manages RAM), File Management (manages files), Device Management (controls hardware), Security & Protection (prevents unauthorized access), User Interface (CLI/GUI), Network Management (handles communication), and Command Interpreter (executes user commands)."*
+> _"OS components are the actual building blocks: Process Management (manages running programs), Memory Management (manages RAM), File Management (manages files), Device Management (controls hardware), Security & Protection (prevents unauthorized access), User Interface (CLI/GUI), Network Management (handles communication), and Command Interpreter (executes user commands)."_
 
 ---
 
@@ -1331,7 +1374,7 @@ Here is a **clear, diagram-based, exam-ready answer** on **Reentrant Kernel** �
 
 ```
 NON-REENTRANT KERNEL (One counter bank):
-    
+
     ┌─────────────────────────────────────────────┐
     │                    BANK                     │
     │                                             │
@@ -1348,7 +1391,7 @@ NON-REENTRANT KERNEL (One counter bank):
 
 
 REENTRANT KERNEL (Multiple counter bank):
-    
+
     ┌─────────────────────────────────────────────┐
     │                    BANK                     │
     │                                             │
@@ -1411,13 +1454,13 @@ REENTRANT KERNEL (Multiple counter bank):
 
 ## Key Characteristics of Reentrant Kernel
 
-| Characteristic | Explanation |
-| :--- | :--- |
+| Characteristic               | Explanation                                            |
+| :--------------------------- | :----------------------------------------------------- |
 | **Multiple entries allowed** | Several processes can be in kernel mode simultaneously |
-| **Shared code** | All processes execute the same kernel code |
-| **Separate data** | Each process has its own stack and data area |
-| **No global locks** | Kernel does not lock itself completely |
-| **Preemptive possible** | Kernel can be preempted even while executing |
+| **Shared code**              | All processes execute the same kernel code             |
+| **Separate data**            | Each process has its own stack and data area           |
+| **No global locks**          | Kernel does not lock itself completely                 |
+| **Preemptive possible**      | Kernel can be preempted even while executing           |
 
 ---
 
@@ -1429,11 +1472,11 @@ REENTRANT KERNEL (Multiple counter bank):
 NON-REENTRANT KERNEL:
 
     Time →
-    
+
     Process A: [====Kernel====]                    [====User====]
     Process B:                  [Waiting...]       [====Kernel====]
     Process C:                                    [Waiting...]
-    
+
     Only ONE process in kernel at a time.
     Others must WAIT.
 
@@ -1441,11 +1484,11 @@ NON-REENTRANT KERNEL:
 REENTRANT KERNEL:
 
     Time →
-    
+
     Process A: [====Kernel====]                    [====User====]
-    Process B: [====Kernel====]                  
+    Process B: [====Kernel====]
     Process C:            [====Kernel====]
-    
+
     MULTIPLE processes can be in kernel at the same time.
     No waiting (unless for specific resources).
 ```
@@ -1456,12 +1499,12 @@ REENTRANT KERNEL:
 
 ### Key Requirements for Reentrancy:
 
-| Requirement | Explanation |
-| :--- | :--- |
-| **No global/static variables** | Kernel should not use shared variables that can be corrupted |
-| **Each process has own stack** | Local variables are stored per-process |
-| **Use locks for critical sections** | Only protect specific small parts, not whole kernel |
-| **Kernel preemption allowed** | Kernel can be interrupted and another process can enter |
+| Requirement                         | Explanation                                                  |
+| :---------------------------------- | :----------------------------------------------------------- |
+| **No global/static variables**      | Kernel should not use shared variables that can be corrupted |
+| **Each process has own stack**      | Local variables are stored per-process                       |
+| **Use locks for critical sections** | Only protect specific small parts, not whole kernel          |
+| **Kernel preemption allowed**       | Kernel can be interrupted and another process can enter      |
 
 ### Diagram – How Reentrant Kernel Manages Multiple Processes:
 
@@ -1499,39 +1542,39 @@ REENTRANT KERNEL:
 
 ## Advantages of Reentrant Kernel
 
-| Advantage | Explanation |
-| :--- | :--- |
-| **Better Concurrency** | Multiple processes can make system calls simultaneously |
-| **Higher Throughput** | More work gets done in less time |
-| **Better CPU Utilization** | CPU doesn't sit idle waiting for kernel to become free |
-| **Responsiveness** | System responds faster to user requests |
-| **Scalability** | Works well on multi-core CPUs |
+| Advantage                  | Explanation                                             |
+| :------------------------- | :------------------------------------------------------ |
+| **Better Concurrency**     | Multiple processes can make system calls simultaneously |
+| **Higher Throughput**      | More work gets done in less time                        |
+| **Better CPU Utilization** | CPU doesn't sit idle waiting for kernel to become free  |
+| **Responsiveness**         | System responds faster to user requests                 |
+| **Scalability**            | Works well on multi-core CPUs                           |
 
 ---
 
 ## Disadvantages of Reentrant Kernel
 
-| Disadvantage | Explanation |
-| :--- | :--- |
-| **More Complex** | Harder to design and implement |
-| **Synchronization needed** | Must use locks to protect shared data |
-| **Potential Deadlocks** | Locks can cause deadlocks if not careful |
-| **Debugging difficulty** | Race conditions are hard to find and fix |
+| Disadvantage               | Explanation                              |
+| :------------------------- | :--------------------------------------- |
+| **More Complex**           | Harder to design and implement           |
+| **Synchronization needed** | Must use locks to protect shared data    |
+| **Potential Deadlocks**    | Locks can cause deadlocks if not careful |
+| **Debugging difficulty**   | Race conditions are hard to find and fix |
 
 ---
 
 ## Comparison: Reentrant vs Non-Reentrant Kernel
 
-| Aspect | Non-Reentrant Kernel | Reentrant Kernel |
-| :--- | :--- | :--- |
-| **Multiple processes in kernel** | No (only one at a time) | Yes (many at a time) |
-| **Concurrency** | Poor | Good |
-| **Complexity** | Simple | Complex |
-| **Need for locks** | Minimal | Extensive |
-| **CPU utilization** | Lower | Higher |
-| **Throughput** | Lower | Higher |
-| **Example OS** | Older UNIX, MS-DOS | Modern Linux, Windows, macOS |
-| **On multi-core CPU** | Wastes cores | Utilizes all cores |
+| Aspect                           | Non-Reentrant Kernel    | Reentrant Kernel             |
+| :------------------------------- | :---------------------- | :--------------------------- |
+| **Multiple processes in kernel** | No (only one at a time) | Yes (many at a time)         |
+| **Concurrency**                  | Poor                    | Good                         |
+| **Complexity**                   | Simple                  | Complex                      |
+| **Need for locks**               | Minimal                 | Extensive                    |
+| **CPU utilization**              | Lower                   | Higher                       |
+| **Throughput**                   | Lower                   | Higher                       |
+| **Example OS**                   | Older UNIX, MS-DOS      | Modern Linux, Windows, macOS |
+| **On multi-core CPU**            | Wastes cores            | Utilizes all cores           |
 
 ---
 
@@ -1542,7 +1585,7 @@ NON-REENTRANT:                    REENTRANT:
 
     User    Kernel                    User    Kernel
     Mode     Mode                     Mode     Mode
-    
+
     [P1]──►[▓▓▓▓]                     [P1]──►[▓▓▓▓]
               │                       [P2]──►[▓▓▓▓]
     [P2]  (Waiting)                   [P3]──►[▓▓▓▓]
@@ -1550,7 +1593,7 @@ NON-REENTRANT:                    REENTRANT:
     [P3]  (Waiting)                 ALL INSIDE
               │                     KERNEL AT
     [P4]  (Waiting)                 SAME TIME!
-    
+
     Only ONE inside              MULTIPLE inside
     kernel at a time             kernel at a time
 ```
@@ -1561,12 +1604,12 @@ NON-REENTRANT:                    REENTRANT:
 
 ### Modern Operating Systems use REENTRANT KERNEL:
 
-| OS | Kernel Type |
-| :--- | :--- |
-| **Linux** | Reentrant (fully preemptive kernel) |
-| **Windows (NT family)** | Reentrant |
-| **macOS / iOS** | Reentrant (XNU kernel) |
-| **Android** | Reentrant (Linux kernel) |
+| OS                      | Kernel Type                         |
+| :---------------------- | :---------------------------------- |
+| **Linux**               | Reentrant (fully preemptive kernel) |
+| **Windows (NT family)** | Reentrant                           |
+| **macOS / iOS**         | Reentrant (XNU kernel)              |
+| **Android**             | Reentrant (Linux kernel)            |
 
 ---
 
@@ -1576,37 +1619,37 @@ NON-REENTRANT:                    REENTRANT:
 
 > **"Reentrant Kernel = Many Entries allowed"**
 
-| Letter | Meaning |
-| :--- | :--- |
-| **R** | Reentrant |
-| **K** | Kernel |
-| **E** | Many Entries (E = multiple processes can ENTER) |
+| Letter | Meaning                                         |
+| :----- | :---------------------------------------------- |
+| **R**  | Reentrant                                       |
+| **K**  | Kernel                                          |
+| **E**  | Many Entries (E = multiple processes can ENTER) |
 
 ### Memory Hook:
 
 > **"Non-Reentrant = One at a time (like a single toilet)"**
-> 
+>
 > **"Reentrant = Many at a time (like a public restroom with many stalls)"**
 
 ---
 
 ## One-Line Answer (For short questions)
 
-> *"A reentrant kernel allows multiple processes to execute in kernel mode simultaneously, improving concurrency and CPU utilization, unlike a non-reentrant kernel which allows only one process in kernel at a time."*
+> _"A reentrant kernel allows multiple processes to execute in kernel mode simultaneously, improving concurrency and CPU utilization, unlike a non-reentrant kernel which allows only one process in kernel at a time."_
 
 ---
 
 ## Sample Exam Answer (For 5 marks)
 
-> *"A Reentrant Kernel is a kernel that allows multiple processes to be executing in kernel mode at the same time. This means when one process makes a system call and enters the kernel, another process can also enter the kernel without waiting for the first one to finish."*
+> _"A Reentrant Kernel is a kernel that allows multiple processes to be executing in kernel mode at the same time. This means when one process makes a system call and enters the kernel, another process can also enter the kernel without waiting for the first one to finish."_
 >
-> *"Key characteristics: Multiple entries allowed, shared kernel code, separate data/stack per process, and use of locks only for critical sections."*
+> _"Key characteristics: Multiple entries allowed, shared kernel code, separate data/stack per process, and use of locks only for critical sections."_
 >
-> *"Advantages: Better concurrency, higher throughput, better CPU utilization, and scalability on multi-core systems."*
+> _"Advantages: Better concurrency, higher throughput, better CPU utilization, and scalability on multi-core systems."_
 >
-> *"Disadvantages: More complex to implement, requires careful synchronization to avoid race conditions and deadlocks."*
+> _"Disadvantages: More complex to implement, requires careful synchronization to avoid race conditions and deadlocks."_
 >
-> *"Example: Modern operating systems like Linux, Windows, and macOS use reentrant kernels, while older systems like MS-DOS used non-reentrant kernels."*
+> _"Example: Modern operating systems like Linux, Windows, and macOS use reentrant kernels, while older systems like MS-DOS used non-reentrant kernels."_
 
 ---
 
@@ -1692,12 +1735,12 @@ Here is a **short, exam-ready answer** on **Multiuser System vs Multithreaded Sy
 
 ### Key Points (Short)
 
-| Feature | Explanation |
-| :--- | :--- |
-| **Multiple users** | Many people can log in simultaneously |
-| **User isolation** | Each user has separate files and permissions |
-| **Resource sharing** | All users share the same CPU, RAM, disk |
-| **Examples** | Linux, UNIX, Windows Server |
+| Feature              | Explanation                                  |
+| :------------------- | :------------------------------------------- |
+| **Multiple users**   | Many people can log in simultaneously        |
+| **User isolation**   | Each user has separate files and permissions |
+| **Resource sharing** | All users share the same CPU, RAM, disk      |
+| **Examples**         | Linux, UNIX, Windows Server                  |
 
 ---
 
@@ -1738,26 +1781,26 @@ Here is a **short, exam-ready answer** on **Multiuser System vs Multithreaded Sy
 
 ### Key Points (Short)
 
-| Feature | Explanation |
-| :--- | :--- |
-| **Multiple threads** | One process has many execution paths |
-| **Shared memory** | All threads share same address space |
-| **Lightweight** | Threads are cheaper than processes |
-| **Concurrent execution** | Threads run in parallel on multi-core CPUs |
-| **Examples** | Web browser tabs, MS Word spell check + typing |
+| Feature                  | Explanation                                    |
+| :----------------------- | :--------------------------------------------- |
+| **Multiple threads**     | One process has many execution paths           |
+| **Shared memory**        | All threads share same address space           |
+| **Lightweight**          | Threads are cheaper than processes             |
+| **Concurrent execution** | Threads run in parallel on multi-core CPUs     |
+| **Examples**             | Web browser tabs, MS Word spell check + typing |
 
 ---
 
 ## Main Differences (Multiuser vs Multithreaded)
 
-| Aspect | Multiuser System | Multithreaded System |
-| :--- | :--- | :--- |
-| **What is multiple?** | Multiple **USERS** | Multiple **THREADS** |
-| **Within what?** | Same computer | Same process |
-| **Isolation** | Users are isolated (separate files) | Threads share everything |
-| **Purpose** | Share computer resources | Improve performance within a program |
-| **Example** | Linux server with 100 users | Web browser with 10 tabs |
-| **Hardware** | Can work on single CPU | Best on multi-core CPU |
+| Aspect                | Multiuser System                    | Multithreaded System                 |
+| :-------------------- | :---------------------------------- | :----------------------------------- |
+| **What is multiple?** | Multiple **USERS**                  | Multiple **THREADS**                 |
+| **Within what?**      | Same computer                       | Same process                         |
+| **Isolation**         | Users are isolated (separate files) | Threads share everything             |
+| **Purpose**           | Share computer resources            | Improve performance within a program |
+| **Example**           | Linux server with 100 users         | Web browser with 10 tabs             |
+| **Hardware**          | Can work on single CPU              | Best on multi-core CPU               |
 
 ---
 
@@ -1799,23 +1842,23 @@ Here is a **short, exam-ready answer** on **Multiuser System vs Multithreaded Sy
 
 ## Quick Summary Table
 
-| Feature | Multiuser | Multithreaded |
-| :--- | :--- | :--- |
-| **Multiple** | Users | Threads |
-| **Level** | System level | Process level |
-| **Memory** | Separate per user | Shared among threads |
-| **Goal** | Resource sharing | Parallel execution |
-| **Complexity** | Moderate | Moderate |
-| **Example OS/App** | Linux, UNIX | Chrome, Word, VLC |
+| Feature            | Multiuser         | Multithreaded        |
+| :----------------- | :---------------- | :------------------- |
+| **Multiple**       | Users             | Threads              |
+| **Level**          | System level      | Process level        |
+| **Memory**         | Separate per user | Shared among threads |
+| **Goal**           | Resource sharing  | Parallel execution   |
+| **Complexity**     | Moderate          | Moderate             |
+| **Example OS/App** | Linux, UNIX       | Chrome, Word, VLC    |
 
 ---
 
 ## Trick to Learn (The "U vs T" Method)
 
-| Letter | Means | Memory Hook |
-| :--- | :--- | :--- |
-| **U** | Multiuser = **U**sers | "Many **U**sers on one computer" |
-| **T** | Multithreaded = **T**hreads | "Many **T**hreads in one program" |
+| Letter | Means                       | Memory Hook                       |
+| :----- | :-------------------------- | :-------------------------------- |
+| **U**  | Multiuser = **U**sers       | "Many **U**sers on one computer"  |
+| **T**  | Multithreaded = **T**hreads | "Many **T**hreads in one program" |
 
 ### One sentence each:
 
@@ -1827,11 +1870,11 @@ Here is a **short, exam-ready answer** on **Multiuser System vs Multithreaded Sy
 
 ## Sample Exam Answer (Short – For 3-5 marks)
 
-> *"A **Multiuser System** allows multiple users to use the same computer simultaneously. Each user has their own login, files, and permissions. Examples: Linux, UNIX, Windows Server."*
+> _"A **Multiuser System** allows multiple users to use the same computer simultaneously. Each user has their own login, files, and permissions. Examples: Linux, UNIX, Windows Server."_
 >
-> *"A **Multithreaded System** allows a single process to have multiple threads (lightweight sub-tasks) executing concurrently within the same memory space. All threads share the process's resources. Examples: Web browser with multiple tabs, MS Word running spell check while typing."*
+> _"A **Multithreaded System** allows a single process to have multiple threads (lightweight sub-tasks) executing concurrently within the same memory space. All threads share the process's resources. Examples: Web browser with multiple tabs, MS Word running spell check while typing."_
 >
-> *"The key difference: Multiuser focuses on multiple users sharing one computer, while Multithreaded focuses on one process doing multiple tasks in parallel."*
+> _"The key difference: Multiuser focuses on multiple users sharing one computer, while Multithreaded focuses on one process doing multiple tasks in parallel."_
 
 ---
 
@@ -1914,29 +1957,29 @@ Here is a **short, exam-ready answer** on **Monolithic Kernel vs Microkernel** �
 
 ### Key Points (Short)
 
-| Feature | Explanation |
-| :--- | :--- |
-| **All services in kernel** | Everything runs in kernel mode |
-| **Single large code** | One big executable |
-| **Fast** | No message passing overhead |
-| **Hard to modify** | Changing one part affects whole |
+| Feature                    | Explanation                     |
+| :------------------------- | :------------------------------ |
+| **All services in kernel** | Everything runs in kernel mode  |
+| **Single large code**      | One big executable              |
+| **Fast**                   | No message passing overhead     |
+| **Hard to modify**         | Changing one part affects whole |
 
 ### Advantages
 
-| Advantage | Why? |
-| :--- | :--- |
-| **Fast performance** | No context switching between user and kernel for services |
-| **Simple communication** | All services can call each other directly |
-| **Efficient** | Less overhead than microkernel |
+| Advantage                | Why?                                                      |
+| :----------------------- | :-------------------------------------------------------- |
+| **Fast performance**     | No context switching between user and kernel for services |
+| **Simple communication** | All services can call each other directly                 |
+| **Efficient**            | Less overhead than microkernel                            |
 
 ### Disadvantages
 
-| Disadvantage | Why? |
-| :--- | :--- |
-| **Hard to debug** | One bug can crash entire system |
-| **Poor modularity** | All components tightly coupled |
+| Disadvantage            | Why?                                                 |
+| :---------------------- | :--------------------------------------------------- |
+| **Hard to debug**       | One bug can crash entire system                      |
+| **Poor modularity**     | All components tightly coupled                       |
 | **Difficult to extend** | Adding new feature requires recompiling whole kernel |
-| **Not portable** | Hardware-specific code scattered everywhere |
+| **Not portable**        | Hardware-specific code scattered everywhere          |
 
 ---
 
@@ -1997,46 +2040,46 @@ Here is a **short, exam-ready answer** on **Monolithic Kernel vs Microkernel** �
 
 ### Key Points (Short)
 
-| Feature | Explanation |
-| :--- | :--- |
-| **Minimal kernel** | Only essential services in kernel |
+| Feature                              | Explanation                                    |
+| :----------------------------------- | :--------------------------------------------- |
+| **Minimal kernel**                   | Only essential services in kernel              |
 | **Other services as user processes** | File system, drivers, network run in user mode |
-| **Message passing** | Services communicate via IPC |
-| **More stable** | Driver crash doesn't crash whole system |
+| **Message passing**                  | Services communicate via IPC                   |
+| **More stable**                      | Driver crash doesn't crash whole system        |
 
 ### Advantages
 
-| Advantage | Why? |
-| :--- | :--- |
-| **More stable** | If a driver crashes, only that service fails, not whole OS |
-| **More secure** | Services are isolated from each other |
-| **Easy to extend** | Add new service without modifying kernel |
-| **Portable** | Only small kernel needs porting to new hardware |
-| **Modular** | Each service can be developed independently |
+| Advantage          | Why?                                                       |
+| :----------------- | :--------------------------------------------------------- |
+| **More stable**    | If a driver crashes, only that service fails, not whole OS |
+| **More secure**    | Services are isolated from each other                      |
+| **Easy to extend** | Add new service without modifying kernel                   |
+| **Portable**       | Only small kernel needs porting to new hardware            |
+| **Modular**        | Each service can be developed independently                |
 
 ### Disadvantages
 
-| Disadvantage | Why? |
-| :--- | :--- |
-| **Slower performance** | Message passing overhead between user and kernel |
-| **More context switches** | Frequent switching between user and kernel mode |
-| **Complex communication** | Services need IPC to talk to each other |
+| Disadvantage              | Why?                                             |
+| :------------------------ | :----------------------------------------------- |
+| **Slower performance**    | Message passing overhead between user and kernel |
+| **More context switches** | Frequent switching between user and kernel mode  |
+| **Complex communication** | Services need IPC to talk to each other          |
 
 ---
 
 ## Comparison Side-by-Side
 
-| Aspect | Monolithic Kernel | Microkernel |
-| :--- | :--- | :--- |
-| **Size** | Large (millions of lines) | Small (tens of thousands of lines) |
-| **Services location** | All in kernel mode | Only essential in kernel; others in user mode |
-| **Performance** | Fast | Slower (due to IPC overhead) |
-| **Stability** | Low (one crash = system crash) | High (service crash ≠ system crash) |
-| **Security** | Less (everything has kernel access) | More (services isolated) |
-| **Modularity** | Poor (tightly coupled) | Excellent (loosely coupled) |
-| **Extensibility** | Hard (need to recompile kernel) | Easy (add user service) |
-| **Portability** | Hard | Easy |
-| **Example OS** | Linux, older UNIX | QNX, Minix |
+| Aspect                | Monolithic Kernel                   | Microkernel                                   |
+| :-------------------- | :---------------------------------- | :-------------------------------------------- |
+| **Size**              | Large (millions of lines)           | Small (tens of thousands of lines)            |
+| **Services location** | All in kernel mode                  | Only essential in kernel; others in user mode |
+| **Performance**       | Fast                                | Slower (due to IPC overhead)                  |
+| **Stability**         | Low (one crash = system crash)      | High (service crash ≠ system crash)           |
+| **Security**          | Less (everything has kernel access) | More (services isolated)                      |
+| **Modularity**        | Poor (tightly coupled)              | Excellent (loosely coupled)                   |
+| **Extensibility**     | Hard (need to recompile kernel)     | Easy (add user service)                       |
+| **Portability**       | Hard                                | Easy                                          |
+| **Example OS**        | Linux, older UNIX                   | QNX, Minix                                    |
 
 ---
 
@@ -2083,23 +2126,23 @@ MICROKERNEL SIZE:
 
 ## Real-World Examples
 
-| OS | Kernel Type |
-| :--- | :--- |
-| **Linux** | Monolithic (but modular – can load modules) |
+| OS                   | Kernel Type                                         |
+| :------------------- | :-------------------------------------------------- |
+| **Linux**            | Monolithic (but modular – can load modules)         |
 | **Windows NT/10/11** | Hybrid (mostly monolithic + some microkernel ideas) |
-| **macOS / iOS** | Hybrid (XNU kernel – monolithic + microkernel) |
-| **QNX** | True Microkernel |
-| **Minix** | True Microkernel |
-| **Android** | Monolithic (Linux kernel) |
+| **macOS / iOS**      | Hybrid (XNU kernel – monolithic + microkernel)      |
+| **QNX**              | True Microkernel                                    |
+| **Minix**            | True Microkernel                                    |
+| **Android**          | Monolithic (Linux kernel)                           |
 
 ---
 
 ## Trick to Learn (The "M vs M" Method)
 
-| Letter | Kernel | Memory Hook |
-| :--- | :--- | :--- |
-| **M** | Monolithic | **M** = **M**assive (one big block) |
-| **M** | Microkernel | **M** = **M**inimal (very small) |
+| Letter | Kernel      | Memory Hook                         |
+| :----- | :---------- | :---------------------------------- |
+| **M**  | Monolithic  | **M** = **M**assive (one big block) |
+| **M**  | Microkernel | **M** = **M**inimal (very small)    |
 
 ### One sentence each:
 
@@ -2146,11 +2189,10 @@ Microkernel = Minimum in kernel, rest outside
 
 ## Sample Exam Answer (Short – For 5 marks)
 
-> *"A **Monolithic Kernel** contains all OS services (process management, memory management, file system, device drivers) in a single large block of code running in kernel mode. It is fast but less stable and hard to extend. Examples: Linux, traditional UNIX."*
+> _"A **Monolithic Kernel** contains all OS services (process management, memory management, file system, device drivers) in a single large block of code running in kernel mode. It is fast but less stable and hard to extend. Examples: Linux, traditional UNIX."_
 >
-> *"A **Microkernel** contains only essential services (basic process scheduling, basic memory management, IPC) in kernel mode. All other services like file system and device drivers run as user-mode processes. It is more stable, secure, and modular, but slower due to message passing overhead. Examples: QNX, Minix."*
+> _"A **Microkernel** contains only essential services (basic process scheduling, basic memory management, IPC) in kernel mode. All other services like file system and device drivers run as user-mode processes. It is more stable, secure, and modular, but slower due to message passing overhead. Examples: QNX, Minix."_
 >
-> *"The key difference: Monolithic puts everything in kernel (fast but risky), while Microkernel puts only minimal core in kernel (stable but slower)."*
+> _"The key difference: Monolithic puts everything in kernel (fast but risky), while Microkernel puts only minimal core in kernel (stable but slower)."_
 
 ---
-
