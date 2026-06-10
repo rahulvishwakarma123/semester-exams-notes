@@ -1,3 +1,5 @@
+﻿# table of content
+
 
 
 # Relational Algebra
@@ -1009,183 +1011,6 @@ Here is a **concise, exam-ready answer** on **Relational Calculus** for AKTU exa
 
 
 
-# Relational Calculus
-
-### Definition
-
-**Relational Calculus** is a **non-procedural (declarative) query language** for relational databases. It specifies **what** data to retrieve, not **how** to retrieve it. It is based on **predicate logic**.
-
-### Relational Algebra vs Relational Calculus (Key Difference)
-
-| Aspect | Relational Algebra | Relational Calculus |
-|--------|-------------------|---------------------|
-| **Nature** | Procedural | Declarative (Non-procedural) |
-| **Focus** | How to get result | What result is needed |
-| **Operation** | Step-by-step procedure | Logical expression |
-| **Order** | Specifies operation sequence | No sequence specified |
-
----
-
-## Clean Diagram for Exam
-
-```
-┌─────────────────────────────────────────────────────┐
-│                 RELATIONAL CALCULUS                  │
-└─────────────────────────────────────────────────────┘
-                          │
-            ┌─────────────┴─────────────┐
-            │                           │
-            ▼                           ▼
-┌─────────────────────┐     ┌─────────────────────┐
-│  TUPLE RELATIONAL   │     │ DOMAIN RELATIONAL   │
-│     CALCULUS        │     │     CALCULUS        │
-├─────────────────────┤     ├─────────────────────┤
-│ Variables represent │     │ Variables represent │
-│      TUPLES         │     │    DOMAIN values    │
-│      (Rows)         │     │   (Column values)   │
-├─────────────────────┤     ├─────────────────────┤
-│ Notation: {T \|     │     │ Notation: {x1,x2.. \│
-│   P(T)}             │     │   P(x1,x2..)}       │
-└─────────────────────┘     └─────────────────────┘
-```
-
----
-
-## Types of Relational Calculus
-
-### 1. Tuple Relational Calculus (TRC)
-
-| Aspect | Description |
-|--------|-------------|
-| **Variable** | Represents a **tuple (row)** from a table |
-| **Notation** | { T \| P(T) } where T is tuple variable, P is predicate |
-| **Range** | Variables range over tuples of a relation |
-
-**Syntax:** `{ T | Condition involving T }`
-
-**Example Query:** Find names of students who scored above 80.
-
-```
-{ T.Name | STUDENT(T) ∧ T.Score > 80 }
-```
-
-**Result:** Alice, Charlie
-
-**More Examples:**
-
-| Query | Expression |
-|-------|------------|
-| Find all students | { T \| STUDENT(T) } |
-| Find students with age 20 | { T \| STUDENT(T) ∧ T.Age = 20 } |
-| Find names of CSE students | { T.Name \| STUDENT(T) ∧ T.Dept_ID = "D01" } |
-
----
-
-### 2. Domain Relational Calculus (DRC)
-
-| Aspect | Description |
-|--------|-------------|
-| **Variable** | Represents a **domain value** (column value) |
-| **Notation** | { x1, x2, ... \| P(x1, x2, ...) } |
-| **Range** | Variables range over domains (data types) |
-
-**Syntax:** `{ a1, a2, ... | Condition involving a1, a2, ... }`
-
-**Example Query:** Find names of students who scored above 80.
-
-```
-{ N | ∃ Sid, A, Sc, Did ( STUDENT(Sid, N, A, Sc, Did) ∧ Sc > 80 ) }
-```
-
-**Result:** Alice, Charlie
-
-**More Examples:**
-
-| Query | Expression |
-|-------|------------|
-| Find all student names | { N \| ∃ Sid, A, Sc, Did (STUDENT(Sid, N, A, Sc, Did)) } |
-| Find students with age 20 | { Sid, N \| ∃ A, Sc, Did (STUDENT(Sid, N, 20, Sc, Did)) } |
-
----
-
-## Quantifiers in Relational Calculus
-
-| Quantifier | Symbol | Meaning | Example |
-|------------|--------|---------|---------|
-| **Universal** | ∀ | For all | ∀ x (condition) |
-| **Existential** | ∃ | There exists | ∃ x (condition) |
-
-**Example with Universal Quantifier:** Find students who have taken ALL courses.
-
-```
-{ T.Student_ID | STUDENT(T) ∧ ∀ C (COURSE(C) → ∃ E (ENROLLS(E) ∧ E.Student_ID = T.Student_ID ∧ E.Course_ID = C.Course_ID)) }
-```
-
-**Example with Existential Quantifier:** Find students who have taken at least one course.
-
-```
-{ T.Name | STUDENT(T) ∧ ∃ E (ENROLLS(E) ∧ E.Student_ID = T.Student_ID) }
-```
-
----
-
-## Relational Algebra vs Relational Calculus (Detailed)
-
-| Comparison | Relational Algebra | Relational Calculus |
-|------------|-------------------|---------------------|
-| **Type** | Procedural | Declarative |
-| **Specification** | How to get result | What result is |
-| **Operation** | Sequence of operations | Logical expression |
-| **Order** | Important | Not important |
-| **Language** | Low-level | High-level |
-| **Example** | σ(Score>80)(STUDENT) | { T \| STUDENT(T) ∧ T.Score>80 } |
-| **Implementation** | Directly implemented | Must be converted to algebra |
-
----
-
-## Summary Table for Exam
-
-| Aspect | Tuple Calculus (TRC) | Domain Calculus (DRC) |
-|--------|---------------------|----------------------|
-| **Variable** | Tuple (row) | Domain (column value) |
-| **Notation** | { T \| P(T) } | { x1,x2.. \| P(x1,x2..) } |
-| **Range** | Over relations | Over domains |
-| **Example** | { T.Name \| STUDENT(T) ∧ T.Score>80 } | { N \| ∃ Sid,Sc (STUDENT(Sid,N,Sc) ∧ Sc>80) } |
-
----
-
-## Tip to Remember for Exams
-
-### Memory Trick: **"T.R.C. = Tuple Row Calculus, D.R.C. = Domain Value Calculus"**
-
-**One-Line Summary:**
-> *"Relational Calculus = What to get (declarative), Relational Algebra = How to get (procedural)"*
-
-**Difference Shortcut:**
-> *"Algebra = Steps, Calculus = Condition"*
-
----
-
-## Sample Answer for AKTU Exam (Short)
-
-> **Q: What is Relational Calculus?**
->
-> **Ans:** Relational Calculus is a **non-procedural** query language that specifies **what** data to retrieve, not **how** to retrieve it. It is based on predicate logic.
->
-> **Types:**
-> 1. **Tuple Relational Calculus (TRC)** – Variables represent tuples (rows). Notation: { T | P(T) }
-> 2. **Domain Relational Calculus (DRC)** – Variables represent domain values. Notation: { x1,x2.. | P(x1,x2..) }
->
-> **Example (TRC):** Find students with Score > 80
-> ```
-> { T.Name | STUDENT(T) ∧ T.Score > 80 }
-> ```
->
-> **Difference from Algebra:** Algebra is procedural (how), Calculus is declarative (what).
-
----
-
-
 
 # SQL (Structured Query Language)
 
@@ -1823,6 +1648,1184 @@ SELECT * FROM Employee WHERE IsActive = TRUE;
 > - `DATE '2000-01-01'` → Date literal
 
 ---
+
+
+
+
+
+# SQL Queries and Subqueries (7 Marks Answer)
+
+## SQL Queries
+
+**SQL (Structured Query Language)** is a standard language used to communicate with relational databases. SQL queries are commands used to retrieve, insert, update, delete, and manipulate data stored in database tables.
+
+A query is a request for data or information from a database.
+
+### Common SQL Queries
+
+#### 1. SELECT Query
+
+Used to retrieve data from a table.
+
+```sql
+SELECT * FROM Student;
+```
+
+Example:
+
+```sql
+SELECT Name, RollNo FROM Student;
+```
+
+#### 2. INSERT Query
+
+Used to add new records into a table.
+
+```sql
+INSERT INTO Student(RollNo, Name, Branch)
+VALUES(101, 'Rahul', 'CSE');
+```
+
+#### 3. UPDATE Query
+
+Used to modify existing records.
+
+```sql
+UPDATE Student
+SET Branch = 'IT'
+WHERE RollNo = 101;
+```
+
+#### 4. DELETE Query
+
+Used to remove records.
+
+```sql
+DELETE FROM Student
+WHERE RollNo = 101;
+```
+
+#### 5. WHERE Clause
+
+Used to filter records.
+
+```sql
+SELECT * FROM Student
+WHERE Branch = 'CSE';
+```
+
+---
+
+## Subqueries
+
+A **Subquery** (also called a nested query or inner query) is a query written inside another SQL query. The inner query executes first, and its result is passed to the outer query.
+
+### Definition
+
+"A subquery is a SELECT statement embedded within another SQL statement."
+
+### Syntax
+
+```sql
+SELECT column_name
+FROM table_name
+WHERE column_name operator
+(
+    SELECT column_name
+    FROM table_name
+);
+```
+
+---
+
+## Types of Subqueries
+
+### 1. Single Row Subquery
+
+Returns only one row.
+
+Example:
+
+Find students whose marks are greater than the average marks.
+
+```sql
+SELECT Name
+FROM Student
+WHERE Marks >
+(
+    SELECT AVG(Marks)
+    FROM Student
+);
+```
+
+**Explanation:**
+
+* Inner query calculates average marks.
+* Outer query displays students scoring above average.
+
+---
+
+### 2. Multiple Row Subquery
+
+Returns multiple rows.
+
+Example:
+
+Find students belonging to departments located in Delhi.
+
+```sql
+SELECT Name
+FROM Student
+WHERE DeptID IN
+(
+    SELECT DeptID
+    FROM Department
+    WHERE City = 'Delhi'
+);
+```
+
+---
+
+### 3. Correlated Subquery
+
+The inner query depends on the outer query and executes repeatedly.
+
+Example:
+
+```sql
+SELECT S1.Name
+FROM Student S1
+WHERE Marks >
+(
+    SELECT AVG(Marks)
+    FROM Student S2
+    WHERE S1.Branch = S2.Branch
+);
+```
+
+Here, the inner query is executed for every row of the outer query.
+
+---
+
+## Advantages of Subqueries
+
+1. Simplifies complex queries.
+2. Improves readability.
+3. Eliminates the need for temporary tables.
+4. Helps perform calculations and comparisons.
+5. Useful for nested data retrieval.
+
+---
+
+## Disadvantages of Subqueries
+
+1. Can be slower than joins for large databases.
+2. Complex subqueries may be difficult to understand.
+3. Correlated subqueries may reduce performance.
+
+---
+
+## Difference Between Query and Subquery
+
+| Query                           | Subquery                          |
+| ------------------------------- | --------------------------------- |
+| Independent SQL statement       | Query inside another query        |
+| Executes directly               | Executes as part of another query |
+| Can retrieve or manipulate data | Provides data to outer query      |
+| Simpler                         | More complex                      |
+
+---
+
+## Conclusion
+
+SQL queries are used to perform operations on databases such as retrieving, inserting, updating, and deleting data. A subquery is a query embedded inside another query that helps solve complex database problems efficiently. Subqueries can be single-row, multiple-row, or correlated and are widely used in database management systems for advanced data retrieval.
+
+---
+
+## Learning Trick for AKTU Exams
+
+Remember the keyword:
+
+### **SIUD + TAD**
+
+**SIUD** → Main SQL Queries
+
+* **S** = Select
+* **I** = Insert
+* **U** = Update
+* **D** = Delete
+
+**TAD** → Subquery Points
+
+* **T** = Types (Single Row, Multiple Row, Correlated)
+* **A** = Advantages
+* **D** = Disadvantages
+
+### Writing Strategy in Exam
+
+1. Definition of SQL Query.
+2. Write 4 SQL queries (SELECT, INSERT, UPDATE, DELETE).
+3. Definition of Subquery.
+4. Syntax of Subquery.
+5. Types of Subqueries with examples.
+6. Advantages and Disadvantages.
+7. Difference between Query and Subquery.
+8. Conclusion.
+
+If you memorize this **"Definition → Queries → Subquery → Types → Advantages → Disadvantages → Difference → Conclusion"** flow, you can easily write **6–7 pages and score full marks in AKTU DBMS theory exams.**
+
+
+
+
+# Aggregate Functions in SQL (7 Marks Answer)
+
+## Introduction
+
+**Aggregate Functions** are special SQL functions that perform calculations on a set of values and return a **single result**.
+
+They are mainly used for data analysis, reporting, and summarizing information stored in database tables.
+
+Aggregate functions ignore **NULL values** (except `COUNT(*)`, which counts all rows).
+
+### Definition
+
+> "An Aggregate Function is a function that performs a calculation on multiple rows of a table and returns a single summarized value."
+
+---
+
+## Why Aggregate Functions are Used
+
+Aggregate functions help to:
+
+* Calculate totals
+* Find averages
+* Determine maximum and minimum values
+* Count records
+* Generate reports and statistics
+
+For example, in a Student table, aggregate functions can be used to find:
+
+* Total students
+* Average marks
+* Highest marks
+* Lowest marks
+
+---
+
+## Types of Aggregate Functions
+
+There are five major aggregate functions in SQL:
+
+1. COUNT()
+2. SUM()
+3. AVG()
+4. MAX()
+5. MIN()
+
+---
+
+## 1. COUNT() Function
+
+The `COUNT()` function is used to count the number of rows in a table.
+
+### Syntax
+
+```sql
+SELECT COUNT(column_name)
+FROM table_name;
+```
+
+### Example
+
+Student Table:
+
+| RollNo | Name  | Marks |
+| ------ | ----- | ----- |
+| 101    | Rahul | 80    |
+| 102    | Aman  | 90    |
+| 103    | Priya | 85    |
+
+Query:
+
+```sql
+SELECT COUNT(*) FROM Student;
+```
+
+Output:
+
+```text
+3
+```
+
+### Explanation
+
+`COUNT(*)` counts all rows present in the table.
+
+---
+
+## 2. SUM() Function
+
+The `SUM()` function calculates the total sum of a numeric column.
+
+### Syntax
+
+```sql
+SELECT SUM(column_name)
+FROM table_name;
+```
+
+### Example
+
+```sql
+SELECT SUM(Marks)
+FROM Student;
+```
+
+Calculation:
+
+```text
+80 + 90 + 85 = 255
+```
+
+Output:
+
+```text
+255
+```
+
+### Explanation
+
+It adds all values of the specified column and returns the total.
+
+---
+
+## 3. AVG() Function
+
+The `AVG()` function calculates the average value of a numeric column.
+
+### Syntax
+
+```sql
+SELECT AVG(column_name)
+FROM table_name;
+```
+
+### Example
+
+```sql
+SELECT AVG(Marks)
+FROM Student;
+```
+
+Calculation:
+
+```text
+(80 + 90 + 85)/3
+= 85
+```
+
+Output:
+
+```text
+85
+```
+
+### Explanation
+
+It returns the arithmetic mean of all values.
+
+---
+
+## 4. MAX() Function
+
+The `MAX()` function returns the largest value from a column.
+
+### Syntax
+
+```sql
+SELECT MAX(column_name)
+FROM table_name;
+```
+
+### Example
+
+```sql
+SELECT MAX(Marks)
+FROM Student;
+```
+
+Output:
+
+```text
+90
+```
+
+### Explanation
+
+It finds the highest value in the selected column.
+
+---
+
+## 5. MIN() Function
+
+The `MIN()` function returns the smallest value from a column.
+
+### Syntax
+
+```sql
+SELECT MIN(column_name)
+FROM table_name;
+```
+
+### Example
+
+```sql
+SELECT MIN(Marks)
+FROM Student;
+```
+
+Output:
+
+```text
+80
+```
+
+### Explanation
+
+It finds the lowest value in the selected column.
+
+---
+
+## Aggregate Functions with GROUP BY
+
+The `GROUP BY` clause is often used with aggregate functions to divide data into groups and apply calculations to each group separately.
+
+### Example Table
+
+| Name  | Branch | Marks |
+| ----- | ------ | ----- |
+| Rahul | CSE    | 80    |
+| Aman  | CSE    | 90    |
+| Priya | IT     | 85    |
+| Neha  | IT     | 75    |
+
+### Query
+
+```sql
+SELECT Branch, AVG(Marks)
+FROM Student
+GROUP BY Branch;
+```
+
+### Output
+
+| Branch | AVG(Marks) |
+| ------ | ---------- |
+| CSE    | 85         |
+| IT     | 80         |
+
+### Explanation
+
+Average marks are calculated separately for each branch.
+
+---
+
+## Aggregate Functions with HAVING Clause
+
+The `HAVING` clause is used to filter grouped data after aggregation.
+
+### Example
+
+```sql
+SELECT Branch, AVG(Marks)
+FROM Student
+GROUP BY Branch
+HAVING AVG(Marks) > 80;
+```
+
+### Output
+
+| Branch | AVG(Marks) |
+| ------ | ---------- |
+| CSE    | 85         |
+
+### Explanation
+
+Only branches with average marks greater than 80 are displayed.
+
+---
+
+## Advantages of Aggregate Functions
+
+1. Simplify complex calculations.
+2. Provide summarized information quickly.
+3. Useful for reports and statistical analysis.
+4. Reduce manual calculations.
+5. Work efficiently with large databases.
+
+---
+
+## Disadvantages of Aggregate Functions
+
+1. Return summarized results only.
+2. Individual records may be hidden.
+3. Performance may decrease on extremely large datasets.
+4. Incorrect grouping can lead to misleading results.
+
+---
+
+## Difference Between Aggregate Functions
+
+| Function | Purpose             | Example Output |
+| -------- | ------------------- | -------------- |
+| COUNT()  | Counts rows         | 100            |
+| SUM()    | Calculates total    | 5000           |
+| AVG()    | Finds average       | 50             |
+| MAX()    | Finds highest value | 98             |
+| MIN()    | Finds lowest value  | 10             |
+
+---
+
+## Conclusion
+
+Aggregate functions are powerful SQL functions used to perform calculations on multiple rows and return a single result. The most commonly used aggregate functions are COUNT(), SUM(), AVG(), MAX(), and MIN(). They are often combined with GROUP BY and HAVING clauses to generate meaningful reports and summaries from database tables.
+
+---
+
+## Learning Trick for AKTU Exams
+
+Remember the keyword:
+
+## **CSAMM + GH**
+
+### CSAMM
+
+* **C** = COUNT()
+* **S** = SUM()
+* **A** = AVG()
+* **M** = MAX()
+* **M** = MIN()
+
+### GH
+
+* **G** = GROUP BY
+* **H** = HAVING
+
+### Exam Writing Flow
+
+1. Definition of Aggregate Functions
+2. Need/Purpose
+3. COUNT()
+4. SUM()
+5. AVG()
+6. MAX()
+7. MIN()
+8. GROUP BY
+9. HAVING
+10. Advantages
+11. Disadvantages
+12. Conclusion
+
+### Memory Sentence
+
+**"Count Some Average Marks Maximum-Minimum, Group and Have."**
+
+This sentence helps you remember the complete order:
+**COUNT → SUM → AVG → MAX → MIN → GROUP BY → HAVING**
+
+For AKTU DBMS exams, if you write the definition, all five functions with examples, explain GROUP BY and HAVING, and add advantages/disadvantages, you'll have a strong 7-mark answer.
+
+
+
+# SQL Joins and Their Types (7 Marks Answer)
+
+## Introduction
+
+A **Join** in SQL is used to combine rows from two or more tables based on a related column between them.
+
+In relational databases, data is often stored in multiple tables to avoid redundancy. Joins help retrieve related data from these tables in a single query.
+
+### Definition
+
+> "A SQL Join is a database operation used to combine records from two or more tables based on a common field or relationship."
+
+---
+
+## Why Do We Need Joins?
+
+Consider two tables:
+
+### Student Table
+
+| StudentID | Name  |
+| --------- | ----- |
+| 101       | Rahul |
+| 102       | Aman  |
+| 103       | Priya |
+
+### Marks Table
+
+| StudentID | Marks |
+| --------- | ----- |
+| 101       | 85    |
+| 102       | 90    |
+| 104       | 75    |
+
+If we want the student's name along with marks, we need a **Join** because the information is stored in different tables.
+
+---
+
+## General Syntax of Join
+
+```sql
+SELECT columns
+FROM Table1
+JOIN Table2
+ON Table1.common_column = Table2.common_column;
+```
+
+---
+
+## Types of SQL Joins
+
+Major types of SQL Joins are:
+
+1. INNER JOIN
+2. LEFT OUTER JOIN
+3. RIGHT OUTER JOIN
+4. FULL OUTER JOIN
+5. CROSS JOIN
+6. SELF JOIN
+
+---
+
+## 1. INNER JOIN
+
+An **INNER JOIN** returns only those records that have matching values in both tables.
+
+### Syntax
+
+```sql
+SELECT *
+FROM Student
+INNER JOIN Marks
+ON Student.StudentID = Marks.StudentID;
+```
+
+### Result
+
+| StudentID | Name  | Marks |
+| --------- | ----- | ----- |
+| 101       | Rahul | 85    |
+| 102       | Aman  | 90    |
+
+### Explanation
+
+* StudentID 101 and 102 exist in both tables.
+* StudentID 103 and 104 are excluded.
+
+### Diagram
+
+```text
+Student ∩ Marks
+(Common Records Only)
+```
+
+### Advantages
+
+* Most commonly used join.
+* Retrieves only relevant matching data.
+
+---
+
+## 2. LEFT OUTER JOIN (LEFT JOIN)
+
+A **LEFT JOIN** returns all records from the left table and matching records from the right table.
+
+If no match exists, NULL values are returned.
+
+### Syntax
+
+```sql
+SELECT *
+FROM Student
+LEFT JOIN Marks
+ON Student.StudentID = Marks.StudentID;
+```
+
+### Result
+
+| StudentID | Name  | Marks |
+| --------- | ----- | ----- |
+| 101       | Rahul | 85    |
+| 102       | Aman  | 90    |
+| 103       | Priya | NULL  |
+
+### Explanation
+
+* All students are shown.
+* Priya has no matching marks record, so NULL is displayed.
+
+### Diagram
+
+```text
+All Student Records
++ Matching Marks Records
+```
+
+---
+
+## 3. RIGHT OUTER JOIN (RIGHT JOIN)
+
+A **RIGHT JOIN** returns all records from the right table and matching records from the left table.
+
+### Syntax
+
+```sql
+SELECT *
+FROM Student
+RIGHT JOIN Marks
+ON Student.StudentID = Marks.StudentID;
+```
+
+### Result
+
+| StudentID | Name  | Marks |
+| --------- | ----- | ----- |
+| 101       | Rahul | 85    |
+| 102       | Aman  | 90    |
+| 104       | NULL  | 75    |
+
+### Explanation
+
+* All records from Marks table are displayed.
+* StudentID 104 has no matching student record.
+
+### Diagram
+
+```text
+All Marks Records
++ Matching Student Records
+```
+
+---
+
+## 4. FULL OUTER JOIN
+
+A **FULL OUTER JOIN** returns all records from both tables.
+
+When no match exists, NULL values are filled.
+
+### Syntax
+
+```sql
+SELECT *
+FROM Student
+FULL OUTER JOIN Marks
+ON Student.StudentID = Marks.StudentID;
+```
+
+### Result
+
+| StudentID | Name  | Marks |
+| --------- | ----- | ----- |
+| 101       | Rahul | 85    |
+| 102       | Aman  | 90    |
+| 103       | Priya | NULL  |
+| 104       | NULL  | 75    |
+
+### Explanation
+
+* Includes matching and non-matching rows from both tables.
+
+### Diagram
+
+```text
+Student ∪ Marks
+(All Records)
+```
+
+---
+
+## 5. CROSS JOIN
+
+A **CROSS JOIN** returns the Cartesian Product of two tables.
+
+Each row of the first table is combined with every row of the second table.
+
+### Syntax
+
+```sql
+SELECT *
+FROM Student
+CROSS JOIN Marks;
+```
+
+### Example
+
+If Student table has 3 rows and Marks table has 4 rows:
+
+```text
+Total Rows = 3 × 4 = 12
+```
+
+### Explanation
+
+Every student is paired with every marks record.
+
+### Use Cases
+
+* Generating combinations.
+* Testing scenarios.
+* Creating all possible pairs.
+
+---
+
+## 6. SELF JOIN
+
+A **SELF JOIN** joins a table with itself.
+
+It is useful when records in the same table are related.
+
+### Example Employee Table
+
+| EmpID | Name | ManagerID |
+| ----- | ---- | --------- |
+| 1     | Raj  | NULL      |
+| 2     | Amit | 1         |
+| 3     | Neha | 1         |
+
+### Query
+
+```sql
+SELECT E.Name AS Employee,
+       M.Name AS Manager
+FROM Employee E
+JOIN Employee M
+ON E.ManagerID = M.EmpID;
+```
+
+### Result
+
+| Employee | Manager |
+| -------- | ------- |
+| Amit     | Raj     |
+| Neha     | Raj     |
+
+### Explanation
+
+The Employee table is joined with itself to find managers.
+
+---
+
+## Comparison of Joins
+
+| Join Type       | Matching Rows    | Non-Matching Left | Non-Matching Right |
+| --------------- | ---------------- | ----------------- | ------------------ |
+| INNER JOIN      | Yes              | No                | No                 |
+| LEFT JOIN       | Yes              | Yes               | No                 |
+| RIGHT JOIN      | Yes              | No                | Yes                |
+| FULL OUTER JOIN | Yes              | Yes               | Yes                |
+| CROSS JOIN      | All Combinations | N/A               | N/A                |
+| SELF JOIN       | Same Table Join  | Depends           | Depends            |
+
+---
+
+## Advantages of SQL Joins
+
+1. Retrieve data from multiple tables.
+2. Reduce data redundancy.
+3. Improve database normalization.
+4. Simplify complex queries.
+5. Provide meaningful reports.
+
+---
+
+## Disadvantages of SQL Joins
+
+1. Complex joins may be difficult to understand.
+2. Multiple joins can reduce performance.
+3. Large datasets may increase query execution time.
+
+---
+
+## Conclusion
+
+SQL Joins are essential database operations used to combine data from multiple tables. The major joins are INNER JOIN, LEFT JOIN, RIGHT JOIN, FULL OUTER JOIN, CROSS JOIN, and SELF JOIN. They help users retrieve meaningful information efficiently while maintaining database normalization and reducing redundancy.
+
+---
+
+## Learning Trick for AKTU Exams
+
+Remember:
+
+## **"I Left Right Full Cross Self"**
+
+### Short Form:
+
+**ILRFCS**
+
+* **I** → INNER JOIN
+* **L** → LEFT JOIN
+* **R** → RIGHT JOIN
+* **F** → FULL OUTER JOIN
+* **C** → CROSS JOIN
+* **S** → SELF JOIN
+
+### Visual Memory Trick
+
+Think of two circles (Table A and Table B):
+
+```text
+INNER  = Common Part Only
+LEFT   = Entire Left + Common
+RIGHT  = Entire Right + Common
+FULL   = Everything
+CROSS  = Every Possible Pair
+SELF   = Table Joins Itself
+```
+
+### AKTU Exam Writing Flow
+
+1. Definition of Join
+2. Need of Join
+3. General Syntax
+4. INNER JOIN
+5. LEFT JOIN
+6. RIGHT JOIN
+7. FULL OUTER JOIN
+8. CROSS JOIN
+9. SELF JOIN
+10. Comparison Table
+11. Advantages
+12. Disadvantages
+13. Conclusion
+
+If you remember **"ILRFCS"** and draw simple Venn diagrams for INNER, LEFT, RIGHT, and FULL joins, you can usually score full marks on a 7-mark DBMS question about SQL joins.
+
+---
+
+# Triggers in DBMS – Types, Examples, and Stock Management
+
+### 1. Definition and Need
+
+A **trigger** is a special type of stored procedure that automatically executes (or "fires") in response to specific database events. Unlike stored procedures (called explicitly), triggers are **event-driven** and implicit. They are used for:
+- Maintaining data integrity beyond constraints (CHECK, UNIQUE)
+- Enforcing complex business rules
+- Auditing and logging changes
+- Automating cascading updates/deletions
+- Restricting or monitoring access
+
+**Key characteristics**:
+- Automatic invocation
+- Transaction-aware (can rollback the firing operation)
+- Use virtual tables: `INSERTED` (new values) and `DELETED` (old values) in DML triggers
+- Can be defined at table, database, or server level
+
+---
+
+### 2. Types of Triggers with Examples
+
+#### 2.1 DML Triggers (Data Manipulation Language)
+
+Fire on `INSERT`, `UPDATE`, `DELETE` operations on a table or view.
+
+**a) AFTER / FOR Trigger** – Executes after the DML operation completes.
+
+*Example*: Audit salary changes.
+```sql
+CREATE TRIGGER trg_SalaryAudit
+ON Employees
+AFTER UPDATE
+AS
+BEGIN
+    IF UPDATE(Salary)
+        INSERT INTO AuditLog (EmpID, OldSalary, NewSalary, ChangeDate)
+        SELECT i.EmpID, d.Salary, i.Salary, GETDATE()
+        FROM inserted i JOIN deleted d ON i.EmpID = d.EmpID
+END;
+```
+
+**b) INSTEAD OF Trigger** – Replaces the original DML operation.
+
+*Example*: Make a view updatable.
+```sql
+CREATE TRIGGER trg_InsertProductSupplier
+ON ProductSupplierView
+INSTEAD OF INSERT
+AS
+BEGIN
+    INSERT INTO Suppliers (SupplierName)
+    SELECT DISTINCT SupplierName FROM inserted;
+    
+    INSERT INTO Products (ProductName, SupplierID)
+    SELECT i.ProductName, s.SupplierID
+    FROM inserted i CROSS APPLY 
+    (SELECT SupplierID FROM Suppliers WHERE SupplierName = i.SupplierName) s;
+END;
+```
+
+---
+
+#### 2.2 DDL Triggers (Data Definition Language)
+
+Fire on schema events: `CREATE`, `ALTER`, `DROP`, `GRANT`, `REVOKE`.
+
+*Example*: Prevent dropping tables and log attempts.
+```sql
+CREATE TRIGGER trg_PreventDropTable
+ON DATABASE
+FOR DROP_TABLE
+AS
+BEGIN
+    PRINT 'DROP TABLE not allowed';
+    ROLLBACK;
+    INSERT INTO DDL_Log (EventType, ObjectName, AttemptTime)
+    VALUES ('DROP_TABLE', 
+            EVENTDATA().value('(/EVENT_INSTANCE/ObjectName)[1]', 'nvarchar(100)'),
+            GETDATE());
+END;
+```
+
+`EVENTDATA()` returns XML with details about the DDL event.
+
+---
+
+#### 2.3 Login Triggers (Logon Triggers)
+
+Fire after authentication but before session establishment.
+
+*Example*: Allow logins only on weekdays, 9 AM to 6 PM.
+```sql
+CREATE TRIGGER trg_RestrictLoginTime
+ON ALL SERVER
+FOR LOGON
+AS
+BEGIN
+    IF DATEPART(HOUR, GETDATE()) NOT BETWEEN 9 AND 18
+       OR DATEPART(WEEKDAY, GETDATE()) IN (1,7)
+    BEGIN
+        PRINT 'Login allowed only Mon-Fri, 9 AM - 6 PM';
+        ROLLBACK;
+    END
+END;
+```
+
+---
+
+#### 2.4 CLR Triggers (Common Language Runtime)
+
+Triggers written in .NET languages (C#/VB.NET) instead of T-SQL. Used for:
+- Complex string processing (regex, encryption)
+- Web service calls
+- File system operations
+- Advanced mathematical computations
+
+*Example*: C# trigger that calls a warehouse API after order insertion.
+
+**C# Code**:
+```csharp
+[SqlTrigger(Name = "trg_NotifyWarehouse", Target = "Orders", Event = "AFTER INSERT")]
+public static void NotifyWarehouse()
+{
+    using (SqlConnection conn = new SqlConnection("context connection=true"))
+    {
+        conn.Open();
+        SqlCommand cmd = new SqlCommand("SELECT ProductID, QtyOrdered FROM inserted", conn);
+        // Call external web API using WebClient
+    }
+}
+```
+
+**Registration in SQL Server**:
+```sql
+EXEC sp_configure 'clr enabled', 1;
+RECONFIGURE;
+CREATE ASSEMBLY WarehouseTriggers FROM 'C:\MyTriggers.dll';
+CREATE TRIGGER trg_CLR_NotifyWarehouse ON Orders AFTER INSERT
+AS EXTERNAL NAME WarehouseTriggers.StockTriggers.NotifyWarehouse;
+```
+
+---
+
+### 3. Complete Example: Product Stock Management
+
+**Scenario**:  
+Tables – `Products(ProductID, Name, StockQty)` and `Orders(OrderID, ProductID, QtyOrdered)`.  
+Business rule: After an order is placed, reduce stock automatically. If stock becomes negative, cancel the order.
+
+**Trigger Code** (DML AFTER Trigger):
+```sql
+CREATE TRIGGER trg_UpdateStockAfterOrder
+ON Orders
+AFTER INSERT
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Reduce stock based on ordered quantity
+    UPDATE p
+    SET p.StockQty = p.StockQty - i.QtyOrdered
+    FROM Products p
+    INNER JOIN inserted i ON p.ProductID = i.ProductID;
+    
+    -- Check for negative stock
+    IF EXISTS (SELECT 1 FROM Products WHERE StockQty < 0)
+    BEGIN
+        PRINT 'Stock cannot be negative. Order cancelled.';
+        ROLLBACK TRANSACTION;  -- Undo the INSERT operation
+    END
+END;
+```
+
+**Explanation**:
+- The trigger fires automatically **after** an `INSERT` into `Orders`.
+- It uses the virtual `inserted` table to access the new order rows.
+- Stock is reduced by joining `Products` with `inserted`.
+- If any product's stock becomes negative, `ROLLBACK` cancels the entire order insertion.
+- This ensures data consistency even if multiple applications insert orders simultaneously.
+
+**Advantage**: Business logic resides in the database, not in application code – prevents duplication and ensures all clients follow the same rule.
+
+---
+
+### 4. Summary Table
+
+| Trigger Type | Fires On | Virtual Tables / Data | Can Rollback? | Primary Use |
+|--------------|----------|----------------------|---------------|--------------|
+| **DML - AFTER** | INSERT/UPDATE/DELETE | `inserted`, `deleted` | Yes | Auditing, cascading updates |
+| **DML - INSTEAD OF** | INSERT/UPDATE/DELETE on views | `inserted`, `deleted` | Yes | Making views updatable |
+| **DDL** | CREATE/ALTER/DROP etc. | `EVENTDATA()` XML | Yes | Preventing schema changes, auditing |
+| **Login** | LOGON event | `EVENTDATA()` XML | Yes (cancels login) | Time/IP-based access control |
+| **CLR** | DML or DDL (via .NET) | Same + .NET objects | Yes | Web calls, file I/O, advanced logic |
+
+---
+
+### 5. Learning Trick to Remember
+
+**Mnemonic: "D-D-C-L" + "Stock Story"**
+
+- **D**ML – Data changes (INSERT/UPDATE/DELETE)
+- **D**DL – Definition changes (CREATE/ALTER/DROP)
+- **C**LR – C# / .NET code
+- **L**ogin – Logon session starts
+
+**Stock Story** (for the product management example):
+> *"A customer orders 10 chairs. The trigger reduces stock from 50 to 40. If someone tries to order 60 when only 50 exist, the trigger shouts 'Rollback!' – like a vigilant inventory guard protecting against negative stock."*
+
+**Exam Writing Order (7 marks allocation)**:
+1. Definition + need (1 mark)
+2. List 4 types (1 mark)
+3. Explain each type with one example (3 marks)
+4. Product stock management example with code (1.5 marks)
+5. Mention virtual tables (`INSERTED`/`DELETED`) and transaction control (0.5 mark)
+
+**Pro tip**: Draw a small table showing how `INSERTED` and `DELETED` work for UPDATE – that often impresses examiners.
+
+---
+
+This answer is now complete, self-contained, and ready for your AKTU DBMS exam. Good luck!
+
 
 
 
